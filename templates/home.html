@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WASHROOM</title>
+{#<style type="text/css">#}
+{#table, div1,div2,div3,div4#}
+{#  {#}
+{#  border:2px solid black;#}
+{#  }#}
+{##}
+{#td#}
+{#  {#}
+{#  height:50px;#}
+{#  vertical-align:bottom;#}
+{#  }#}
+{#</style>#}
+</head>
+<body>
+<mid>WASHROOM<mid>
+
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" onclick="hideShowHandler()" class="btn btn-default">洗手间</button>
+      <button type="button" class="btn btn-default">状态</button>
+      <button type="button" class="btn btn-default">时间</button>
+    </div>
+
+    <div id="washroom1" style="border:width:50px, margin:50px, float:center, boarder: soild 20px yellow">
+        <img style="width: 50px; height: 50px" id="x" src="../static/no.png" ></img>
+        {#        <img id="y" src="{{ STATIC_URL }}yes.png"></img>#}
+    </div>
+
+    <div id="washroom2" style="border:2px solid black">
+        <img style="width: 55px; height: 55px" id="y" src="../static/yes.png"></img>
+    </div>
+
+    <div id="washroom3" style="border:2px solid black">
+        <img style="width: 50px; height: 50px" id="x" src="../static/no.png" ></img>
+        {#        <img id="y" src="{{ STATIC_URL }}yes.png"></img>#}
+    </div>
+
+    <div id="washroom4" style="border:2px solid black">
+         <img style="width: 55px; height: 55px" id="y" src="../static/yes.png"></img>
+    </div>
+
+</body>
+<script>
+    function hideShowHandler() {
+        console.log(document.getElementById("washroom1").style.display)
+        if(document.getElementById("washroom1").style.display != "none"){
+            document.getElementById("washroom1").style.display="none";
+        }else {
+            document.getElementById("washroom1").style.display="inline";
+        }
+    }
+
+    function getroomdata(){
+        var req = new XMLHttpRequest()
+        var res = req.open("http://127.0.0.1:8000/getwashroomdata/")
+
+    }
+</script>
+</html>
+
